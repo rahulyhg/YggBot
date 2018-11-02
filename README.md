@@ -16,4 +16,4 @@ Library: [Discord.js](https://discord.js.org)
 ## Commands:
 
 ### General:
-  - '!help' to get a list of available commands
+  - 'ygg!help' to get a list of available commands
