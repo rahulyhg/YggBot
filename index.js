@@ -23,7 +23,7 @@ client.on('message', message => {
 	*/
 	
 	//help
-	if (message.content === '!help') {
+	if (message.content === 'ygg!help') {
 		message.channel.send('\`\`\`Available Commands:\
 			!amazing, !crickets, !eh, !hi, !macho, !no, !siero, !slap, !thwump\
 			!whatsup, !whyme, !wiggle\
