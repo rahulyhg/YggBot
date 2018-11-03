@@ -1,6 +1,6 @@
 # YggBot
 
-An attempt at making a basic Discord bot to display images larger than what the standard emojis allow for.
+An attempt at making a basic Discord bot for Granblue Fantasy.
 
 Library: [Discord.js](https://discord.js.org)
 
@@ -16,4 +16,5 @@ Library: [Discord.js](https://discord.js.org)
 ## Commands:
 
 ### General:
-  - 'ygg!help' to get a list of available commands
+  - '!emo' lets the bot post a sticker
+  - '!wiki' gives you the information for a character
