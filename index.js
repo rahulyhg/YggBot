@@ -23,7 +23,7 @@ client.on('message', message => {
 	const command = args.shift().toLowerCase();
 	
 	try {
-		client.commands.get('images').execute(message, args);
+		client.commands.get(command).execute(message, args);
 	}
 	catch (error) {
 		console.error(error);
@@ -31,4 +31,4 @@ client.on('message', message => {
 	}
 });
 
-client.login('tokengoeshere');
+client.login('NTA3Nzg0MDQzNDg4NjA4Mjc4.Dr1vxg.Lf1EANm1AnJVitSTMXyohjISQzI');
