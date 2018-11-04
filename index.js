@@ -16,6 +16,15 @@ client.once('ready', () => {
     console.log('Ready!');
 });
 
+client.on('guildMemberAdd', member => {
+  // Send the message to a designated channel on a server:
+  const channel = member.guild.channels.find(ch => ch.name === 'member-log');
+  if (!channel) return;
+
+  // Send the message, mentioning the member
+  channel.send(`Welcome to the server, ${member}! Be sure to read through the #rules and post a quick introduction in #introductions!`);
+});
+
 client.on('message', message => {
 	if (!message.content.startsWith(PREFIX) || message.author.bot) return;
 
@@ -27,7 +36,6 @@ client.on('message', message => {
 	}
 	catch (error) {
 		console.error(error);
-		message.reply('There was an error!');
 	}
 });
 
