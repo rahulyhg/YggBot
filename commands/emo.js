@@ -7,6 +7,7 @@ var stickers = {
 	'hi' : 'https://i.imgur.com/sUZQ2bj.png',
 	'macho' : 'https://i.imgur.com/SCRMPBu.png',
 	'nooo' : 'https://i.imgur.com/XZ3k7EZ.png',
+	'police' : 'https://media1.tenor.com/images/ae6d71cdb35082ac7a77afe20aad28c4/tenor.gif',
 	'siero' : 'https://i.imgur.com/2x3xTGJ.png',
 	'slap' : 'https://i.imgur.com/2BCeOLr.png',
 	'thwump' : 'https://i.imgur.com/JbtWPhJ.png',
@@ -30,7 +31,7 @@ module.exports = {
 				.catch(console.error);
 		}
 		
-		else if (comm === 'ygghelp') {
+		else if (comm === 'help') {
 			var avaCom = 'Available Commands: ';
 			for (var key in stickers) {
 				avaCom += '!' + key + ', ';

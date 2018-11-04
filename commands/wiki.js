@@ -11,11 +11,11 @@ const stats = require('../data/stats');
 
 var eleColor = {
 	'Fire' : 'RED',
-	'Water' : 'AQUA',
+	'Water' : 'BLUE',
 	'Earth' : 'DARK_GREEN',
 	'Wind' : 'GREEN',
 	'Light' : 'GOLD',
-	'Dark' : 'DARK_GREY'
+	'Dark' : 'DARK_NAVY'
 }
 
 /*	Display: [Proper Name, Party Image, Detail Image, Wiki Link]
@@ -34,6 +34,16 @@ module.exports = {
 		if (sliced in alias) character = alias[sliced];
 		else character = sliced;
 		
+		//if help command is received
+		if (character == 'help') {
+			helpMessage = '\`\`\`Type \'!wiki\' followed by the name of a character to bring up their info!\n' +
+						  'Examples: \'!wiki charlotta\', \'!wiki perci\', \'!wiki d cag\'.\`\`\`';
+			message.channel.send(helpMessage);
+		}
+		
+		//if character isn't valid, then exit early
+		if (!(character in display)) return;
+		
 		//adding pretty stuff to the embed
 		page.setTitle(display[character][0]);
 		page.setThumbnail(display[character][1]);
@@ -42,21 +52,21 @@ module.exports = {
 		
 		//adding important stuff to the embed
 		if (stats[character][6] == '') {
-			page.addField('Stats', '\n**HP: ** ' + stats[character][0] +
-							'\n**ATK: ** ' + stats[character][1] +
-							'\n**Element: ** ' + stats[character][2] +
-							'\n**Race: ** ' + stats[character][3] +
-							'\n**Type: ** ' + stats[character][4] +
-							'\n**Prof: ** ' + stats[character][5]
+			page.addField('Stats', '\n**HP**: ' + stats[character][0] +
+							'\n**ATK**: ' + stats[character][1] +
+							'\n**Element**: ' + stats[character][2] +
+							'\n**Race**: ' + stats[character][3] +
+							'\n**Type**: ' + stats[character][4] +
+							'\n**Prof**: ' + stats[character][5]
 							);
 		}
 		else {
-			page.addField('Stats', '\n**HP: ** ' + stats[character][0] +
-							'\n**ATK: ** ' + stats[character][1] +
-							'\n**Element: ** ' + stats[character][2] +
-							'\n**Race: ** ' + stats[character][3] +
-							'\n**Type: ** ' + stats[character][4] +
-							'\n**Prof: ** ' + stats[character][5] + ', ' + stats[character][6]
+			page.addField('Stats', '\n**HP**: ' + stats[character][0] +
+							'\n**ATK**: ' + stats[character][1] +
+							'\n**Element**: ' + stats[character][2] +
+							'\n**Race**: ' + stats[character][3] +
+							'\n**Type**: ' + stats[character][4] +
+							'\n**Prof**: ' + stats[character][5] + ', ' + stats[character][6]
 							);
 		}
 		page.addField('Charge Attack', ougis[character]);
